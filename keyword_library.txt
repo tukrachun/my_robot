@@ -1,0 +1,18 @@
+*** Settings ***
+Library	          Selenium2Library
+
+
+*** Variables ***
+${GOOGLE URL}    http://www.google.co.th
+
+
+*** Keywords ***
+Search
+	[Arguments]     ${keyword}
+	Open Browser    ${GOOGLE URL}
+	Input Text      gbqfq    ${keyword}
+	Click Button    gbqfb
+
+Found
+	[Arguments]     ${expected result}
+	Wait Until Page Contains    ${expected result}

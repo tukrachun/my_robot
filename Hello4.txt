@@ -1,0 +1,18 @@
+*** Settings ***
+Suite Teardown    Close All Browsers
+Resource          keyword_library.txt
+
+*** Testcases ***
+Rule search data from google
+	[Template]    Flow of searching
+	#--------------- + -----------------#
+	#   Keyword      |  Expected Result #
+	#--------------- + -----------------#
+	  robot              robot
+	  robotframework     robotframework
+
+*** Keywords ***
+Flow of searching
+	[Arguments]    ${keyword}    ${expected result}
+	Search    ${keyword}
+	Found     ${expected result}
